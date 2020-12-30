@@ -24,7 +24,7 @@
     <h2>Follow your dreams and write everything you want! </h2>
 
 
-    <form>
+    <form id="form">
         <fieldset>
             <legend>Fill the gaps to create account!</legend>
             <div>
@@ -52,7 +52,7 @@
             </div>
         </fieldset>
     </form>
-  
+    <script type="text/javascript" src="jsscr/validation.js"> </script>
 </body>
 
 </html>
