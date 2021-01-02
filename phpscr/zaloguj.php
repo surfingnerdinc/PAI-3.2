@@ -17,9 +17,13 @@
     $userNa = $_POST['userName'];
     $userPass = $_POST['userPassword'];
 
-    $sqlquerry = "SELECT * FROM users WHERE userMail = '$userNa' AND userPassword = '$userPass'";
+/* zabezpieczenie przed wstrzykiwaniem zapytan sqla */
+ $userNa = htmlentities($userNa, ENT_QUOTES, "UTF8");
+ $userPass = htmlentities($userPass, ENT_QUOTES, "UTF8");
 
-    if ($res = @$connect -> query($sqlquerry)){
+    if ($res = @$connect -> query(sprintf("SELECT * FROM users WHERE userMail = '%s' AND userPassword = '%s'",
+        mysqli_real_escape_string($connect,$userNa), 
+        mysqli_real_escape_string($connect,$userPass)))){ 
         $tmpusers = $res -> num_rows;
         if($tmpusers > 0){
             $_SESSION['logFlag'] = true;
