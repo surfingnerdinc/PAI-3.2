@@ -13,6 +13,7 @@ if(!isset($_SESSION['logFlag'])){
     <title>
         Notes-Manager Pro
     </title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -26,6 +27,7 @@ if(!isset($_SESSION['logFlag'])){
             </ul>
         </nav>
     </header>
+    <div id="counter"></div>
     <h1>Main page after login</h1>
 
     <?php
@@ -35,6 +37,7 @@ if(!isset($_SESSION['logFlag'])){
     <br>
     sesja trwa: TUTAJ WSTAWIĆ LICZNIK.
 
+    <script type ="text/javascript" src ="SCRIPTS/counter.js"></script>
 </body>
 
 </html>
