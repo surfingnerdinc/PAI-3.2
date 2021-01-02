@@ -16,7 +16,7 @@ function startTimer(duration, display) {
 }
 
 jQuery(function ($) {
-    var dwacztery = 60 * 24,
+    var dwacztery = 60 * 23.99,
     display = $('#counter');
     startTimer(dwacztery, display);
 });
