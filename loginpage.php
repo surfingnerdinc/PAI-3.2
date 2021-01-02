@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -38,11 +42,14 @@
                 <input type="password" id="password" name="userPassword" placeholder="Type here..." />
             </div>
             <div>
-            <input class="submitbtn" type="submit" value="Click to log in!" />
+                <input class="submitbtn" type="submit" value="Click to log in!" />
             </div>
+
         </fieldset>
     </form>
-
+    <?php
+    if (isset($_SESSION['error'])) echo $_SESSION['error'];
+    ?>
 </body>
 
 </html>
