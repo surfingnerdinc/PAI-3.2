@@ -1,5 +1,10 @@
 <?php
 session_start();
+if ((isset($_SESSION['logFlag'])) && ($_SESSION['logFlag'] == true)) {
+    header('Location: noteapp/mainpage.php');
+    exit();
+}
+
 ?>
 
 <!DOCTYPE html>

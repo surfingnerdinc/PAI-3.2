@@ -3,6 +3,11 @@
  session_start();
  require_once "connectdata.php";
 
+ if((!isset($_POST['userName'])) || (!isset($_POST['userPassword']))){
+    header('Location: ../index.php');
+    exit(); 
+ }
+
  //w przypadku bledu @ nie wyrzuci nam zadnych 
  $connect = @new mysqli($host, $db_user, $db_password, $db_name);
 
@@ -17,7 +22,10 @@
     if ($res = @$connect -> query($sqlquerry)){
         $tmpusers = $res -> num_rows;
         if($tmpusers > 0){
+            $_SESSION['logFlag'] = true;
+
             $wiersz = $res -> fetch_assoc();
+            $_SESSION['id'] = $wiersz['id'];
             $_SESSION['db_userMail'] = $wiersz['userMail'];
             $_SESSION['db_firstName'] = $wiersz['firstName'];
             $_SESSION['db_lastName'] = $wiersz['lastName'];
