@@ -23,7 +23,7 @@
     <h2>System to manage your notes!</h2>
     <h2>Follow your dreams and write everything you want! </h2>
 
-    <form>
+    <form action="phpscr/zaloguj.php" method="POST">
         <fieldset>
             <legend>
                 Fill gaps to log in!
