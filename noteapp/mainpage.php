@@ -13,7 +13,6 @@ if(!isset($_SESSION['logFlag'])){
     <title>
         Notes-Manager Pro
     </title>
-    <link rel="stylesheet" href="css/loginpage.css" />
 </head>
 
 <body>
