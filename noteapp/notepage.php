@@ -1,6 +1,8 @@
 <?php
 session_start();
-if(!isset($_SESSION['logFlag'])){
+require_once "../phpscr/connectdata.php";
+
+if (!isset($_SESSION['logFlag'])) {
     header('Location: ../index.php');
 }
 
@@ -27,10 +29,10 @@ $_SESSION['creds'] = "Logged as:  " . $_SESSION['db_lastName'] . ", " . $_SESSIO
                 <li><a href="notepage.php">Notes</a></li>
                 <li><a href="accountpage.php">Account!</a></li>
                 <li><a href="../phpscr/logout.php">Logout!</a></li>
-                <div class ="counter" id="counter"></div>
+                <div class="counter" id="counter"></div>
                 <div class="credentials" id="credentials">
                     <?php
-                        echo $_SESSION['creds'];
+                    echo $_SESSION['creds'];
                     ?>
                 </div>
             </ul>
@@ -41,8 +43,59 @@ $_SESSION['creds'] = "Logged as:  " . $_SESSION['db_lastName'] . ", " . $_SESSIO
 
 
 
-    
-    <script type ="text/javascript" src ="SCRIPTS/counter.js"></script>
+    <button class="btn-open" onclick="openForm()">Add note </button>
+    <div>
+        <form id="my-form" class="popup-form">
+            <fieldset>
+                <legend>Add note!</legend>
+                <label>Title</label>
+                <input type="text" id="notetitle" name="noteTitle" placeholder="Title" />
+                <label>Content</label>
+                <textarea type="text" id="notecontent" name="noteContent" placeholder="Type here...">
+        </textarea>
+                <button type="submit" class="btn">Add</button>
+                <button type="button" class="btn-cancel" onclick="closeForm()">Close</button>
+            </fieldset>
+    </div>
+    </form>
+
+    <h2>Notes:</h2>
+    <table class="mytable">
+        <tbody>
+            <tr>
+                <th>Title</th>
+                <th>Added on</th>
+                <th>Modified on</th>
+                <th>Content</th>
+            </tr>
+            <?php
+                $connect = @new mysqli($host, $db_user, $db_password, $db_name);
+
+                if ($connect->connect_errno != 0) {
+                    echo "Error: ".$connect -> connect_errno;
+                } 
+
+                $sqlquerry = "SELECT * FROM note";
+
+                $res = $connect -> query($sqlquerry);
+
+                if($res -> num_rows > 0){
+                    while($db_row = $res -> fetch_assoc()) {
+                        echo "</td><td>".$db_row['noteTitle']."</td><td>"
+                        .$db_row['creatDate']."</td><td>".$db_row['modDate']."</td><td>".$db_row['content']."</td></tr>";
+                    }
+                }
+
+            ?>
+        </tbody>
+
+    </table>
+    <div id="rowCounter" class="rowcounter"></div>
+
+
+    <script type="text/javascript" src="SCRIPTS/counter.js"></script>
+    <script type="text/javascript" src="SCRIPTS/addnote.js"></script>
+    <script type="text/javascript" src="SCRIPTS/table.js"></script>
 </body>
 
 </html>

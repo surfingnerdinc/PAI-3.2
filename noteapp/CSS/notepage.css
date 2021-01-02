@@ -35,3 +35,111 @@ nav li:hover {
     font-size: 14px;
 }
 
+
+/* POPUP form to add note */
+
+.btn-open {
+    background-color: #555;
+    color: white;
+    padding: 5px 5px
+    border: none;
+    cursor: pointer;
+    opacity: 0.6;
+    position: fixed;
+    bottom: 23px;
+    right: 23px;
+}
+
+.btn-open:hover {
+    opacity: 1;
+}
+
+.popup-form{
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 2px solid #f1f1f1;
+    z-index: 9;
+}
+
+fieldset {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+}
+
+fieldset input[type = "text"], textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid;
+}
+
+fieldset input[type = "text"]:focus, textarea:focus{
+    background-color: #ddd;
+    outline: none;
+}
+
+.btn, .btn-cancel {
+    border: 1px solid;
+    cursor: pointer;
+    opacity: 0.6;
+    color: #555;
+    display: inline;
+    color: white;
+    padding: 5px 5px;
+}
+
+.btn-cancel {
+    background-color: rgba(194, 3, 3, 0.927);
+}
+
+.btn {
+    background-color: rgb(77, 213, 49);
+}
+
+fieldset input[type = "button"]:hover, input[type="submit"]:hover{
+    opacity: 1;
+}
+
+fieldset legend {
+    text-align: left;
+    padding: 5px 5px;
+}
+
+
+
+/* table showing content of data base */
+
+.mytable {
+  width: auto;
+  border-collapse: collapse;
+  border-radius: 15px;
+  border-spacing: 0;
+  margin: auto;
+  margin-bottom: 1%; 
+
+}
+
+.mytable th {
+  font-size: 14px;
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+.mytable tr, td {
+  font-size: 14px;
+  border-top: 1px solid #ddd;
+  padding: 5px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+tr:nth-child(2n+1){
+  background-color: #f3f3f3;
+}
+
+tr:hover, tr.selected {
+  background-color: rgb(189, 189, 189);
+}
+
