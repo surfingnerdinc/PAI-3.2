@@ -1,5 +1,9 @@
 <?php
 session_start();
+if(!isset($_SESSION['logFlag'])){
+    header('Location: ../index.php');
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -19,6 +23,7 @@ session_start();
                 <li><a href="mainpage.php">Main page</a></li>
                 <li><a href="notepage.php">Notes</a></li>
                 <li><a href="accountpage.php">Account!</a></li>
+                <li><a href="../phpscr/logout.php">Logout!</a></li>
             </ul>
         </nav>
     </header>
