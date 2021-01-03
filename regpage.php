@@ -1,3 +1,9 @@
+<?php
+
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -5,7 +11,7 @@
     <title>
         Notes-Manager Pro
     </title>
-    <link rel="stylesheet" href="css/regpage.css" />
+    <link rel="stylesheet" href="css/regpage.css"/>
 </head>
 
 <body>
@@ -24,7 +30,7 @@
     <h2>Follow your dreams and write everything you want! </h2>
 
 
-    <form id="form">
+    <form id="form" method="POST" action="createacc.php">
         <fieldset>
             <legend>Fill the gaps to create account!</legend>
             <div>
@@ -46,6 +52,10 @@
             <div>
                 <label>Repeat pass</label>
                 <input type="password" id="passwordconf" name="userPasswordConf" placeholder="Type here ..." />
+            </div>
+            <div>
+                <label>I agree</label>
+                <input type="checkbox" name="terms" />
             </div>
             <div>
                 <input class="submitbtn" type="submit" value="Click to create account" />

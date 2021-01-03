@@ -28,16 +28,18 @@ nav li:hover {
 
 /* Inputs styles */
 
-fieldset{
-    width: 60%;
+fieldset {
+    width: 50%;
     position: relative;
-    margin: auto
+    margin: auto;
 }
+
+
 legend {
     font-size: 20px;
     text-align: left;
-    background-color: #d3d3d3;
-    border-radius: 30px;
+    border: none;
+    background-color: none;
 }
 
 form label{
@@ -52,6 +54,7 @@ form input {
     padding: 20px;
     text-align: left;
 }
+
 
 .submitbtn{
     width: auto;
