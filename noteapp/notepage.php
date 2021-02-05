@@ -7,6 +7,7 @@ if (!isset($_SESSION['logFlag'])) {
 }
 
 $_SESSION['creds'] = "Logged as:  " . $_SESSION['lname'] . ", " . $_SESSION['fname'];
+unset ($_SESSION['success']);
 
 ?>
 
@@ -70,6 +71,7 @@ $_SESSION['creds'] = "Logged as:  " . $_SESSION['lname'] . ", " . $_SESSION['fna
         <tbody>
             <tr>
                 <th>Title</th>
+                <th>Title</th>
                 <th>Added on</th>
                 <th>Modified on</th>
                 <th>Content</th>
@@ -91,11 +93,17 @@ $_SESSION['creds'] = "Logged as:  " . $_SESSION['lname'] . ", " . $_SESSION['fna
 
                 if($res -> num_rows > 0){
                     while($db_row = $res -> fetch_assoc()) {
-                        echo "</td><td>".$db_row['Title']."</td><td>"
-                        .$db_row['Created']."</td><td>".$db_row['Modified']."</td><td>".$db_row['Content']."</td><td><a href=edit.php>Edit</a></td><td><a href=del.php>Delete</a></td></tr>";
+                        echo "</td><td>"
+                        .$db_row['Id']."</td><td>"
+                        .$db_row['Title']."</td><td>"
+                        .$db_row['Created']."</td><td>"
+                        .$db_row['Modified']."</td><td>"
+                        .$db_row['Content']."</td><td>
+                        <a href='edit.php'>Edit</a></td>
+                        <td><a href='php/deln.php?num=$db_row[Id]'>Delete</a>".$db_row['Id']."</div>
+                        </td></tr>";
                     }
-                }
-
+                }  
             ?>
         </tbody>
 
