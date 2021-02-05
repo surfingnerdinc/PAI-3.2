@@ -44,7 +44,7 @@ $_SESSION['creds'] = "Logged as:  " . $_SESSION['lname'] . ", " . $_SESSION['fna
 
     <button class="btn-open" onclick="openForm()">Add note </button>
     <div>
-        <form id="my-form" class="popup-form">
+        <form id="my-form" class="popup-form" method="POST" action="php/addn.php">
             <fieldset>
                 <legend>Add note!</legend>
                 <label>Title</label>
@@ -61,6 +61,11 @@ $_SESSION['creds'] = "Logged as:  " . $_SESSION['lname'] . ", " . $_SESSION['fna
 
 
     <h2>Notes:</h2>
+    <h1><?php 
+        if(isset($_SESSION['success'])){
+            echo $_SESSION['success'];
+        }
+    ?></h1>
     <table class="mytable">
         <tbody>
             <tr>
@@ -68,6 +73,8 @@ $_SESSION['creds'] = "Logged as:  " . $_SESSION['lname'] . ", " . $_SESSION['fna
                 <th>Added on</th>
                 <th>Modified on</th>
                 <th>Content</th>
+                <th>Edit</th>
+                <th>Del</th>
             </tr>
             <?php
                 $connect = @new mysqli($host, $db_user, $db_password, $db_name);
@@ -85,7 +92,7 @@ $_SESSION['creds'] = "Logged as:  " . $_SESSION['lname'] . ", " . $_SESSION['fna
                 if($res -> num_rows > 0){
                     while($db_row = $res -> fetch_assoc()) {
                         echo "</td><td>".$db_row['Title']."</td><td>"
-                        .$db_row['Created']."</td><td>".$db_row['Modified']."</td><td>".$db_row['Content']."</td></tr>";
+                        .$db_row['Created']."</td><td>".$db_row['Modified']."</td><td>".$db_row['Content']."</td><td><a href=edit.php>Edit</a></td><td><a href=del.php>Delete</a></td></tr>";
                     }
                 }
 
