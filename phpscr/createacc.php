@@ -9,7 +9,20 @@
      echo "Error: ".$connect -> connect_errno;
  }
 
- 
+ if(isset($_POST['userMail'])){
+
+    //Tutaj będzie jeszcze jakas walidacja po stronie serwera.
+
+
+
+     //hashowanie hasel
+    $userpass1 = $_POST['userPassword'];
+    $userpass2 = $_POST['userPasswordConf'];
+    $hash_pw = password_hash($userPassword, PASSWORD_DEFAULT);
+
+    echo $hash_pw; exit();
+
+ }
 
 
 

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2f993091-fd91-4c2d-9408-ba90a9bcfc20" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/noteapp/mainpage.php" beforeDir="false" afterPath="$PROJECT_DIR$/noteapp/mainpage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/noteapp/notepage.php" beforeDir="false" afterPath="$PROJECT_DIR$/noteapp/notepage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phpscr/createacc.php" beforeDir="false" afterPath="$PROJECT_DIR$/phpscr/createacc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phpscr/zaloguj.php" beforeDir="false" afterPath="$PROJECT_DIR$/phpscr/zaloguj.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/regpage.php" beforeDir="false" afterPath="$PROJECT_DIR$/regpage.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1o3hevXwlEI5pYjnYio9aPCJMBy" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2f993091-fd91-4c2d-9408-ba90a9bcfc20" name="Default Changelist" comment="" />
+      <created>1612521280625</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1612521280625</updated>
+      <workItem from="1612521282234" duration="4024000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.php" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="744" y="360" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1612521454549">
+      <screen x="0" y="25" width="2560" height="1353" />
+    </state>
+    <state x="744" y="360" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.2560.1353/-1920.25.1920.1055@0.25.2560.1353" timestamp="1612521454549" />
+  </component>
+</project>
