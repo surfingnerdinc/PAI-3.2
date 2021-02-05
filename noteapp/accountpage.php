@@ -4,7 +4,7 @@ if(!isset($_SESSION['logFlag'])){
     header('Location: ../index.php');
 }
 
-$_SESSION['creds'] = "Logged as:  " . $_SESSION['db_lastName'] . ", " . $_SESSION['db_firstName'];
+$_SESSION['creds'] = "Logged as:  " . $_SESSION['lname'] . ", " . $_SESSION['fname'];
 
 ?>
 
@@ -41,7 +41,7 @@ $_SESSION['creds'] = "Logged as:  " . $_SESSION['db_lastName'] . ", " . $_SESSIO
 
 
 
-    
+
     <script type ="text/javascript" src ="SCRIPTS/counter.js"></script>
 </body>
 

@@ -42,7 +42,6 @@ $_SESSION['creds'] = "Logged as:  " . $_SESSION['lname'] . ", " . $_SESSION['fna
     <h1>Note page after login</h1>
 
 
-
     <button class="btn-open" onclick="openForm()">Add note </button>
     <div>
         <form id="my-form" class="popup-form">
@@ -58,6 +57,8 @@ $_SESSION['creds'] = "Logged as:  " . $_SESSION['lname'] . ", " . $_SESSION['fna
             </fieldset>
     </div>
     </form>
+
+
 
     <h2>Notes:</h2>
     <table class="mytable">
@@ -75,10 +76,9 @@ $_SESSION['creds'] = "Logged as:  " . $_SESSION['lname'] . ", " . $_SESSION['fna
                     echo "Error: ".$connect -> connect_errno;
                 }
 
-
-                $id = $_SESSION['id'];
-
-                $sqlquerry = "SELECT * FROM notatki WHERE Author = '$id'";
+                $author = $_SESSION['id'];
+                echo "You Id is equal: " . $author;
+                $sqlquerry = "SELECT * FROM notatki WHERE Author = '$author'";
 
                 $res = $connect -> query($sqlquerry);
 

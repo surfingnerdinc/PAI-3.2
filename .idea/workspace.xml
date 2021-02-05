@@ -1,17 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="2f993091-fd91-4c2d-9408-ba90a9bcfc20" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/noteapp/mainpage.php" beforeDir="false" afterPath="$PROJECT_DIR$/noteapp/mainpage.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/noteapp/SCRIPTS/editnote.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/noteapp/CSS/notepage.css" beforeDir="false" afterPath="$PROJECT_DIR$/noteapp/CSS/notepage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/noteapp/notepage.php" beforeDir="false" afterPath="$PROJECT_DIR$/noteapp/notepage.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/phpscr/createacc.php" beforeDir="false" afterPath="$PROJECT_DIR$/phpscr/createacc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phpscr/zaloguj.php" beforeDir="false" afterPath="$PROJECT_DIR$/phpscr/zaloguj.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/regpage.php" beforeDir="false" afterPath="$PROJECT_DIR$/regpage.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -36,7 +62,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1612521280625</updated>
-      <workItem from="1612521282234" duration="4024000" />
+      <workItem from="1612521282234" duration="7963000" />
     </task>
     <servers />
   </component>
@@ -46,10 +72,25 @@
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.php" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
     <state x="744" y="360" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1612521454549">
       <screen x="0" y="25" width="2560" height="1353" />
     </state>
     <state x="744" y="360" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.2560.1353/-1920.25.1920.1055@0.25.2560.1353" timestamp="1612521454549" />
+    <state x="1086" y="620" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1612534336369">
+      <screen x="0" y="25" width="2560" height="1353" />
+    </state>
+    <state x="1086" y="620" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.25.2560.1353/-1920.25.1920.1055@0.25.2560.1353" timestamp="1612534336369" />
   </component>
 </project>

@@ -32,6 +32,13 @@ if ((isset($_SESSION['logFlag'])) && ($_SESSION['logFlag'] == true)) {
     <h2>System to manage your notes!</h2>
     <h2>Follow your dreams and write everything you want! </h2>
 
+    <?php
+        if(isset($_SESSION['success'])){
+            echo '<span style="color:blue;">"Register successfully finished "</span>';
+            echo '<span style="color:blue;">"You can login now!"</span>';
+        }
+    ?>
+
     <form action="phpscr/zaloguj.php" method="POST">
         <fieldset>
             <legend>
@@ -53,7 +60,7 @@ if ((isset($_SESSION['logFlag'])) && ($_SESSION['logFlag'] == true)) {
         </fieldset>
     </form>
     <?php
-    if (isset($_SESSION['error'])) echo $_SESSION['error'];
+    if (isset($_SESSION['err'])) echo $_SESSION['err'];
     ?>
 </body>
 
