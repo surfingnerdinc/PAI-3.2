@@ -1,6 +1,12 @@
 <?php
 
  session_start();
+
+ if((!isset($_POST['userName'])) || (!isset($_POST['userPassword']))){
+     header('Location: ../index.php');
+ }
+
+
  require_once "connectdata.php";
 
  //w przypadku bledu @ nie wyrzuci nam zadnych
@@ -18,21 +24,25 @@
         $tmpusers = $res -> num_rows;
 
         if ($tmpusers == 1) {
+
+            $_SESSION['logFlag'] = true;
+
             $wiersz = $res -> fetch_assoc();
             $_SESSION['fname'] = $wiersz['Fname'];
             $_SESSION['lname'] = $wiersz['Lanme'];
             $_SESSION['id'] = $wiersz['Id'];
 
-            $_SESSION['logFlag'] = true;
 
             $res -> free_result();
 
 
+            unset($_SESSION['err']);
 
             header('Location: ../noteapp/mainpage.php');
 
         } else {
-            echo "Logowanie nieudane! ";
+            $_SESSION['err'] = '<span style ="color:red">Incorrect login or password</span>';
+            header('Location: ../loginpage.php');
         }
     $connect -> close();
  }

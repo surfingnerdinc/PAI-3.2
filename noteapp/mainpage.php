@@ -1,6 +1,10 @@
 <?php
 session_start();
 
+    if(!isset($_SESSION['logFlag'])){
+        header('Location: ../index.php');
+        exit();
+    }
 $_SESSION['creds'] = "Logged as:  " . $_SESSION['lname'] . ", " . $_SESSION['fname'];
 
 ?>

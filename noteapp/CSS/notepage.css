@@ -37,11 +37,10 @@ nav li:hover {
 
 
 /* POPUP form to add note */
-
 .btn-open {
     background-color: #555;
     color: white;
-    padding: 5px 5px
+    padding: 5px 5px;
     border: none;
     cursor: pointer;
     opacity: 0.6;
@@ -49,10 +48,10 @@ nav li:hover {
     bottom: 23px;
     right: 23px;
 }
-
 .btn-open:hover {
     opacity: 1;
 }
+
 
 .popup-form{
     display: none;
@@ -117,7 +116,7 @@ fieldset legend {
   border-radius: 15px;
   border-spacing: 0;
   margin: auto;
-  margin-bottom: 1%; 
+  margin-bottom: 1%;
 
 }
 
