@@ -18,6 +18,8 @@ try {
     $result = $connection -> query ("INSERT INTO `Notatki`(`Title`, `Content`, `Author`) VALUES ('$title', '$content', '$author')");
     $_SESSION['success'] = "Successfully added to db, please refresh";
 
+    $connection -> close();
+
     header('Location: ../notepage.php');
 
 } catch (Exception $err) {
