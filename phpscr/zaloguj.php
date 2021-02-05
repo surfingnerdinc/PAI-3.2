@@ -21,13 +21,13 @@
             $wiersz = $res -> fetch_assoc();
             $_SESSION['fname'] = $wiersz['Fname'];
             $_SESSION['lname'] = $wiersz['Lanme'];
-            $_SESSION['id'] = $wiersz['Author']
+            $_SESSION['id'] = $wiersz['Id'];
 
             $_SESSION['logFlag'] = true;
+
             $res -> free_result();
 
-            echo $fname;
-            echo $lname;
+
 
             header('Location: ../noteapp/mainpage.php');
 

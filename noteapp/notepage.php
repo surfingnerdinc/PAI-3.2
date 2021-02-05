@@ -75,10 +75,9 @@ $_SESSION['creds'] = "Logged as:  " . $_SESSION['lname'] . ", " . $_SESSION['fna
                     echo "Error: ".$connect -> connect_errno;
                 }
 
-
-                $id = $_SESSION['id'];
-
-                $sqlquerry = "SELECT * FROM notatki WHERE Author = '$id'";
+                $author = $_SESSION['id'];
+                echo "You Id is equal: " . $author;
+                $sqlquerry = "SELECT * FROM notatki WHERE Author = '$author'";
 
                 $res = $connect -> query($sqlquerry);
 
