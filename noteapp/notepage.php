@@ -6,7 +6,7 @@ if (!isset($_SESSION['logFlag'])) {
     header('Location: ../index.php');
 }
 
-$_SESSION['creds'] = "Logged as:  " . $_SESSION['db_lastName'] . ", " . $_SESSION['db_firstName'];
+$_SESSION['creds'] = "Logged as:  " . $_SESSION['lname'] . ", " . $_SESSION['fname'];
 
 ?>
 
@@ -73,16 +73,19 @@ $_SESSION['creds'] = "Logged as:  " . $_SESSION['db_lastName'] . ", " . $_SESSIO
 
                 if ($connect->connect_errno != 0) {
                     echo "Error: ".$connect -> connect_errno;
-                } 
+                }
 
-                $sqlquerry = "SELECT * FROM note";
+
+                $id = $_SESSION['id'];
+
+                $sqlquerry = "SELECT * FROM notatki WHERE Author = '$id'";
 
                 $res = $connect -> query($sqlquerry);
 
                 if($res -> num_rows > 0){
                     while($db_row = $res -> fetch_assoc()) {
-                        echo "</td><td>".$db_row['noteTitle']."</td><td>"
-                        .$db_row['creatDate']."</td><td>".$db_row['modDate']."</td><td>".$db_row['content']."</td></tr>";
+                        echo "</td><td>".$db_row['Title']."</td><td>"
+                        .$db_row['Created']."</td><td>".$db_row['Modified']."</td><td>".$db_row['Content']."</td></tr>";
                     }
                 }
 

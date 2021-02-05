@@ -30,12 +30,18 @@ session_start();
     <h2>Follow your dreams and write everything you want! </h2>
 
 
-    <form id="form" method="POST" action="createacc.php">
+    <form id="form" action="phpscr/createacc.php" method="POST">
         <fieldset>
             <legend>Fill the gaps to create account!</legend>
             <div>
                 <label>Your mail</label>
                 <input type="mail" id="mail" name="userMail" placeholder="Type here ..." />
+                <?php
+                    if(isset($_SESSION['error_mail'])){
+                        echo 'there is a mistake'; 
+                        unset($_SESSION['error_mail']);
+                    }
+                ?>
             </div>
             <div>
                 <label>First name</label>
@@ -54,15 +60,15 @@ session_start();
                 <input type="password" id="passwordconf" name="userPasswordConf" placeholder="Type here ..." />
             </div>
             <div>
-                <label>I agree</label>
+                <label>  I agree
                 <input type="checkbox" name="terms" />
+                </label>
             </div>
             <div>
                 <input class="submitbtn" type="submit" value="Click to create account" />
             </div>
         </fieldset>
     </form>
-    <script type="text/javascript" src="jsscr/validation.js"> </script>
 </body>
 
 </html>
