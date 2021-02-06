@@ -1,24 +1,20 @@
 <?php
+error_reporting(E_ALL ^ E_NOTICE);
 session_start();
 if (!isset($_SESSION['logFlag'])) {
     header('Location: ../index.php');
 }
 
 $_SESSION['creds'] = "Logged as:  " . $_SESSION['lname'] . ", " . $_SESSION['fname'];
+unset($_SESSION['success']);
 
 $validation = true;
 
 //Updating 
 
-    $email = $_POST['mail'];
-    $password = $_POST['Password'];
-    $password2 = $_POST['Password2'];
-    $fname = $_POST['FirstName'];
-    $lname = $_POST['LastName'];
-
-
-$emailB = filter_var($email, FILTER_SANITIZE_EMAIL);
-
+$password = $_POST['Password'];
+$password2 = $_POST['Password2'];
+$author = $_SESSION['id'];
 
 if ((strlen($password) < 6) || (strlen($password) > 20)) {
     $validation = false;
@@ -34,42 +30,30 @@ if ($password != $password2) {
 
 
 require_once "connectdata.php";
-    mysqli_report(MYSQLI_REPORT_STRICT);
+mysqli_report(MYSQLI_REPORT_STRICT);
 
-    try {
+try {
 
-        $connection = @new mysqli($host, $db_user, $db_password, $db_name);
+    $connection = @new mysqli($host, $db_user, $db_password, $db_name);
 
 
-        if ($connection->connect_errno != 0) {
-            throw new Exception(mysqli_connect_errno());
-        } else {
-            //if email is existing in db
-
-            $res = $connection->query("SELECT Id FROM Users WHERE Mail = '$email'");
-
-            if (!$res) throw new Exception($connection->error);
-
-            $tmp = $res->num_rows;
-
-            if ($tmp != 0) {
-                $validation = true;
+    if ($connection->connect_errno != 0) {
+        throw new Exception(mysqli_connect_errno());
+    } else {
+        //if email is existing in db
+        if ($validation == true) {
+            if ($connection->query("UPDATE Users SET Password = '$password' WHERE Id = '$author'")) {
+                $_SESSION['success'] = "Your password has been successfully changed!";
+            } else {
+                throw new Exception($connection->error);
             }
-
-            if ($validation == true) {
-                if ($connection->query("INSERT INTO users VALUES (NULL, '$email', '$fname', '$lname', '$password')")) {
-                    $_SESSION['success'] = true;
-                    header('Location: loginpage.php');
-                } else {
-                    throw new Exception($connection->error);
-                }
-            }
-            $connection->close();
         }
-    } catch (Exception $err) {
-        echo '<span style="color:red;">"Connection to db unsuccesfull "</span>';
-        echo $err;
+        $connection->close();
     }
+} catch (Exception $err) {
+    echo '<span style="color:red;">"Connection to db unsuccesfull "</span>';
+    echo $err;
+}
 ?>
 
 <!DOCTYPE html>
@@ -102,41 +86,13 @@ require_once "connectdata.php";
     </header>
     <div id="counter"></div>
     <h1>Account page after login</h1>
+    <h1><?php
+        if (isset($_SESSION['success'])) {
+            echo $_SESSION['success'];
+        }
+        ?></h1>
     <form class="form" method="POST">
         <fieldset>
-            <div>
-                <label>Your mail</label>
-                <input type="text" id="mail" name="mail" placeholder="Type here ..." value="<?php
-
-                                                                                                if (isset($_SESSION['mail'])) {
-                                                                                                    echo $_SESSION['mail'];
-                                                                                                }
-                                                                                                ?>" />
-                <?php
-                if (isset($_SESSION['err_mail'])) {
-                    echo '<div class="error">' . $_SESSION['err_mail'] . '</div>';
-                    unset($_SESSION['err_mail']);
-                }
-                ?>
-            </div>
-            <div>
-                <label>First name</label>
-                <input type="text" id="firstname" name="FirstName" placeholder="Type here ..." value="<?php
-
-                                                                                                        if (isset($_SESSION['fname'])) {
-                                                                                                            echo $_SESSION['fname'];
-                                                                                                        }
-                                                                                                        ?>" />
-            </div>
-            <div>
-                <label>Last name</label>
-                <input type="text" id="lastname" name="LastName" placeholder="Type here ..." value="<?php
-
-                                                                                                    if (isset($_SESSION['lname'])) {
-                                                                                                        echo $_SESSION['lname'];
-                                                                                                    }
-                                                                                                    ?>" />
-            </div>
             <div>
                 <label>Current pass</label>
                 <input type="text" id="currpassword" name="CurrPassword" placeholder="Type here ..." value="<?php
@@ -158,7 +114,7 @@ require_once "connectdata.php";
             </div>
             <div>
                 <label>Repeat pass</label>
-                <input type="password" id="passwordconf" name="Password2" placeholder="Type here ..." />
+                <input type="password" id="password2" name="Password2" placeholder="Type here ..." />
                 <?php
                 if (isset($_SESSION['err_password2'])) {
                     echo '<div class="error">' . $_SESSION['err_password2'] . '</div>';
