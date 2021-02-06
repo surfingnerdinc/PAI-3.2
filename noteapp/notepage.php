@@ -93,15 +93,17 @@ unset ($_SESSION['success']);
                 if($res -> num_rows > 0){
                     while($db_row = $res -> fetch_assoc()) {
                         $_SESSION['did'] = $db_row['Id'];
-                        echo "</td><td>"
+                        echo "</td><td contenteditable='true'>"
                         .$db_row['Title']."</td><td>"
                         .$db_row['Created']."</td><td>"
-                        .$db_row['Modified']."</td><td>"
+                        .$db_row['Modified']."</td><td contenteditable='true'>"
                         .$db_row['Content']."</td><td>
-                        <a href='php/editn.php?did='.$db_row[Id].'>Edit</a>
+                        <a href='php/editn.php?did='.$db_row[Id].'>Add to DB</a>
                         </td><td>
                         <a href='php/deln.php?did='.$db_row[Id].'>Delete</a>
                         </td></tr>";
+                        $_SESSION['title'] = $db_row['Title'];
+                        $_SESSION['Content'] = $db_row['Content'];
                     }
 
                 $connect -> close();
@@ -111,7 +113,6 @@ unset ($_SESSION['success']);
 
     </table>
     <div id="rowCounter" class="rowcounter"></div>
-
 
     <script type="text/javascript" src="SCRIPTS/counter.js"></script>
     <script type="text/javascript" src="SCRIPTS/addnote.js"></script>

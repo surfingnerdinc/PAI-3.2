@@ -74,7 +74,7 @@ if (isset($_POST['Email'])) {
             }
 
             if ($validation == true) {
-                if ($connection->query("INSERT INTO users VALUES (NULL, '$email', '$fname', '$lname', '$password')")) {
+                if ($connection->query("INSERT INTO users VALUES (NULL, '$fname', '$lname', '$email', '$password')")) {
                     $_SESSION['success'] = true;
                     header('Location: loginpage.php');
                 } else {
