@@ -35,3 +35,39 @@ nav li:hover {
     font-size: 14px;
 }
 
+/* Inputs styles */
+
+fieldset {
+    width: 50%;
+    position: relative;
+    margin: auto;
+}
+
+legend {
+    font-size: 20px;
+    text-align: left;
+    border: none;
+    background-color: none;
+}
+
+form label{
+    font-size: 16px;
+}
+
+form input {
+    border: none;
+    border-bottom: 1px solid black;
+    font-size: 12px;
+    width: 60%;
+    padding: 20px;
+    text-align: left;
+}
+
+
+.submitbtn{
+    width: auto;
+    margin-top: 10px;
+    border-radius: 15px;
+    background-color: lightgray;
+    margin-left: 100px;
+}
