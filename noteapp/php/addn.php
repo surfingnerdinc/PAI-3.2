@@ -26,5 +26,3 @@ try {
     echo '<span style="color:red;">"Adding to db unseccussfully finished"</span>';
     echo $err;
 }
-
-?>

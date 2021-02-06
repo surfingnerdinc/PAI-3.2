@@ -28,9 +28,11 @@
             $_SESSION['logFlag'] = true;
 
             $wiersz = $res -> fetch_assoc();
+            $_SESSION['id'] = $wiersz['Id'];
+            $_SESSION['mail'] = $wiersz['Mail'];
             $_SESSION['fname'] = $wiersz['Fname'];
             $_SESSION['lname'] = $wiersz['Lanme'];
-            $_SESSION['id'] = $wiersz['Id'];
+            $_SESSION['password'] = $wiersz['Password'];
 
 
             $res -> free_result();

@@ -71,7 +71,6 @@ unset ($_SESSION['success']);
         <tbody>
             <tr>
                 <th>Title</th>
-                <th>Title</th>
                 <th>Added on</th>
                 <th>Modified on</th>
                 <th>Content</th>
@@ -93,16 +92,19 @@ unset ($_SESSION['success']);
 
                 if($res -> num_rows > 0){
                     while($db_row = $res -> fetch_assoc()) {
+                        $_SESSION['did'] = $db_row['Id'];
                         echo "</td><td>"
-                        .$db_row['Id']."</td><td>"
                         .$db_row['Title']."</td><td>"
                         .$db_row['Created']."</td><td>"
                         .$db_row['Modified']."</td><td>"
                         .$db_row['Content']."</td><td>
-                        <a href='edit.php'>Edit</a></td>
-                        <td><a href='php/deln.php?num=$db_row[Id]'>Delete</a>".$db_row['Id']."</div>
+                        <a href='php/editn.php?did='.$db_row[Id].'>Edit</a>
+                        </td><td>
+                        <a href='php/deln.php?did='.$db_row[Id].'>Delete</a>
                         </td></tr>";
                     }
+
+                $connect -> close();
                 }  
             ?>
         </tbody>
