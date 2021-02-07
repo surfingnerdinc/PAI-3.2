@@ -17,7 +17,7 @@
  } else {
     $userNa = $_POST['userName'];
     $userPass = $_POST['userPassword'];
-
+    $userPass = hash("sha256",$userPass);
     $sql = "SELECT * FROM users WHERE Mail = '$userNa' AND Password = '$userPass'";
 
     if ($res = @$connect -> query($sql)) {
