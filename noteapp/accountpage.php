@@ -1,5 +1,4 @@
 <?php
-error_reporting(E_ALL ^ E_NOTICE);
 session_start();
 if (!isset($_SESSION['logFlag'])) {
     header('Location: ../index.php');
@@ -11,7 +10,9 @@ unset($_SESSION['success']);
 $validation = true;
 
 //Updating 
+if (empty($_POST['Password']  )|| empty($_POST['Password2'])){
 
+}else{
 $password = $_POST['Password'];
 $password2 = $_POST['Password2'];
 $author = $_SESSION['id'];
@@ -42,6 +43,7 @@ try {
     } else {
         //if email is existing in db
         if ($validation == true) {
+            $password = hash("sha256",$password);
             if ($connection->query("UPDATE Users SET Password = '$password' WHERE Id = '$author'")) {
                 $_SESSION['success'] = "Your password has been successfully changed!";
             } else {
@@ -53,6 +55,7 @@ try {
 } catch (Exception $err) {
     echo '<span style="color:red;">"Connection to db unsuccesfull "</span>';
     echo $err;
+}
 }
 ?>
 

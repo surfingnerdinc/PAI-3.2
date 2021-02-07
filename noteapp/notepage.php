@@ -93,13 +93,21 @@ unset ($_SESSION['success']);
                 if($res -> num_rows > 0){
                     while($db_row = $res -> fetch_assoc()) {
                         $_SESSION['did'] = $db_row['Id'];
+                        $id = $db_row['Id'];
                         echo "</td><td contenteditable='true'>"
                         .$db_row['Title']."</td><td>"
                         .$db_row['Created']."</td><td>"
                         .$db_row['Modified']."</td><td contenteditable='true'>"
-                        .$db_row['Content']."</td><td>
-                        <a href='php/editn.php?did='.$db_row[Id].'>Add to DB</a>
-                        </td><td>
+                        .$db_row['Content']."</td>
+                        <td>
+                        <form id='przyciski' action='php/editn.php' method='post'>
+                                Podaj tytył: <input type='text' name='tytul' />
+                                Podaj treść: <input type='text' name='tresc' />
+                                <input type='hidden' value=$id name='id_edycja'>
+                                <input type='submit' value='Edytuj' />
+                            </form>
+                        </td>
+                        <td>
                         <a href='php/deln.php?did='.$db_row[Id].'>Delete</a>
                         </td></tr>";
                         $_SESSION['title'] = $db_row['Title'];

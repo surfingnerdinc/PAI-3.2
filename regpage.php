@@ -12,7 +12,7 @@ if (isset($_POST['Email'])) {
     $password2 = $_POST['Password2'];
     $fname = $_POST['FirstName'];
     $lname = $_POST['LastName'];
-
+    
 
 
     $emailB = filter_var($email, FILTER_SANITIZE_EMAIL);
@@ -73,6 +73,7 @@ if (isset($_POST['Email'])) {
                 $_SESSION['err_mail'] = "Email addr is existing in our db";
             }
 
+            $password = hash("sha256",$password);
             if ($validation == true) {
                 if ($connection->query("INSERT INTO users VALUES (NULL, '$fname', '$lname', '$email', '$password')")) {
                     $_SESSION['success'] = true;
@@ -87,6 +88,7 @@ if (isset($_POST['Email'])) {
         echo '<span style="color:red;">"Connection to db unsuccesfull "</span>';
         echo $err;
     }
+
 }
 ?>
 
